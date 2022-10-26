@@ -8,7 +8,7 @@ public interface Graph<T> {
     void deleteEdge(Edge edge);
     void deleteVertex(int v);
     boolean existsEdge(Edge edge);
-    int orden();
+    int order();
     int alpha();
     T getVertex(int v);
     List<T> getAdyListForVertex(int v);
