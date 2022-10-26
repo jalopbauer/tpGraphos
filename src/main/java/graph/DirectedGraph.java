@@ -18,6 +18,13 @@ public class DirectedGraph<T> implements Graph<T> {
     }
 
     @Override
+    public void deleteVertex(T vertex) {
+        vertexesAdyList.remove(vertex);
+        for (T t : vertexesAdyList.keySet())
+            deleteEdge(new Edge<>(t,vertex));
+    }
+
+    @Override
     public void addEdge(Edge<T> edge) {
         if (existsVertex(edge.getFromVertex()) && existsVertex(edge.getToVertex())) {
             List<T> adyListForVertex = getAdyListForVertex(edge.getFromVertex());
@@ -33,13 +40,6 @@ public class DirectedGraph<T> implements Graph<T> {
             adyListForVertex.remove(edge.getToVertex());
             --alpha;
         }
-    }
-
-    @Override
-    public void deleteVertex(T vertex) {
-        vertexesAdyList.remove(vertex);
-        for (T t : vertexesAdyList.keySet())
-            deleteEdge(new Edge<>(t,vertex));
     }
 
     @Override
