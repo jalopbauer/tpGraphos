@@ -13,6 +13,5 @@ public interface Graph<T> {
     int order();
     int alpha();
     Set<T> getVertexes();
-
     List<T> getAdyListForVertex(T v);
 }
