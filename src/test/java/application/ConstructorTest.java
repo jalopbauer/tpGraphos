@@ -22,7 +22,7 @@ public class ConstructorTest {
     @Test
     public void createsWarshallMatrix(){
         TransportNet<String> transportNet = new TransportNet<>(edges);
-        assertEquals(warshallMatrixForTest, transportNet.getWarshalMatrix()); // La matriz me da true solo en si mismo
+        assertEquals(warshallMatrixForTest, transportNet.getConstantWarshalMatrix()); // La matriz me da true solo en si mismo
     }
 
 }
